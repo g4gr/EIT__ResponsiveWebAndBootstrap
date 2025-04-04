@@ -31,12 +31,25 @@ html {
     font-size: var(--f_fontSize);
 }
 
+figure {
+    display : grid ;
+    place-items: center ;
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* --- Body --- */
 .Body {
     max-width: var(--l_maxWidth);
     margin-inline: auto;
     
     display: grid;
+    grid : 128px auto 25dvh / repeat(12, 1fr);
 
     font-size : clamp( 100% , .75rem + .75dvw, 25px );
     line-height: var(--f_lineHeight);
@@ -47,7 +60,8 @@ html {
 
 /* --- Header --- */
 .Header {
-    
+   grid-row : 1 / 2 ;
+   grid-column: 1 / 13 ; 
 }
 
 /* --- Aside --- */
@@ -58,6 +72,9 @@ html {
 /* --- Main --- */
 .Main {
     width: 100%;
+
+    grid-row : 2 / 3 ;
+    grid-column: 1 / 13 ; 
     
     & .section {
         width: inherit ;
@@ -76,5 +93,30 @@ html {
 
 /* --- Footer --- */
 .Footer {
-    
+    grid-row : 3 / 4 ;
+    grid-column: 1 / 13 ; 
+}
+
+
+/* --- MediaQuery --- */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+
+    .Body {
+        grid-template-columns: repeat(8, 1fr);
+
+    }
+}
+
+@media ( 768px <= width <= 1023px) {
+    .Body {
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+}
+
+@media ( max-width: 767px ) {
+    .Body {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
 }
