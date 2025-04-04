@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+:root {
+    /* --- Layout --- */
+    --l_maxWidth : 1440px ;
+
+    /* --- Typography --- */
+    --f_fontSize : 18px ;
+    --f_lineHeight : 1.5 ;
+    --f_fontWeight : 400 ;
+    --f_fontStyle : normal ;
+
+    /* --- Colors --- */
+    --c_white : #FFFFFF;      /* hsl(0, 0%, 100%) */
+    --c_black : #121212;      /* hsl(0, 0%, 7%) */
+
+    --c_purple500 : #7B5CF2;  /* hsl(256, 67%, 59%) */
+    --c_purple100 : #E0D8FF;  /* hsl(254, 88%, 90%) */
+    --c_yellow500 : #FFCC45;  /* hsl(39, 100%, 71%) */
+    --c_yellow100 : #F9EEE3;  /* hsl(31, 66%, 93%) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    outline: 1px dashed red;
+}
+
+html {
+    font-size: var(--f_fontSize);
+}
+
+/* --- Body --- */
+.Body {
+    max-width: var(--l_maxWidth);
+    margin-inline: auto;
+    
+    display: grid;
+
+    font-size : clamp( 100% , .75rem + .75dvw, 25px );
+    line-height: var(--f_lineHeight);
+    font-weight: var(--f_fontWeight);
+    font-style: var(--f_fontStyle);
+}
+
+
+/* --- Header --- */
+.Header {
+    
+}
+
+/* --- Aside --- */
+.Aside {
+    
+}
+
+/* --- Main --- */
+.Main {
+    width: 100%;
+    
+    & .section {
+        width: inherit ;
+        
+        & .article {
+            display: grid;
+            grid : auto / repeat( auto-fit , minmax( 345px , 1fr ) );
+            grid-gap : .75rem ; 
+
+            
+        }
+    }
+}
+
+
+
+/* --- Footer --- */
+.Footer {
+    
+}
